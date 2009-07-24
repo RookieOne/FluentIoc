@@ -31,6 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\Rhino-Mocks-net-3.5-v3.5\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -45,7 +50,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RegisteringAClassWithOneInterface\IMyClass.cs" />
+    <Compile Include="RegisteringAClassWithOneInterface\MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisteringAClassWithOneInterface\Registering.cs" />
+    <Compile Include="RegisteringAClassWithTwoInterfaces\IInterface1.cs" />
+    <Compile Include="RegisteringAClassWithTwoInterfaces\IInterface2.cs" />
+    <Compile Include="RegisteringAClassWithTwoInterfaces\ClassWithTwoInterfaces.cs" />
+    <Compile Include="RegisteringAClassWithTwoInterfaces\Registering.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FluentIoc\FluentIoc.csproj">
+      <Project>{3CD97344-A137-441A-826D-E17E8217E018}</Project>
+      <Name>FluentIoc</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
